@@ -15,7 +15,10 @@ const config={
     },
 
     scene: [
-        MainMenu
+
+        MainMenu,
+        Login
+
     ],
 
     dom:{
