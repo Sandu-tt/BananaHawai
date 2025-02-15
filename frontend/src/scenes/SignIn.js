@@ -8,12 +8,12 @@ export class SignIn extends Scene {
 
     preload() {
         this.load.image("SignUpTitle", "assets/SignUpTitle.png");
-        this.load.image("SignUpBG", "assets/SignUpBG.png");
+        this.load.image("SignUpBG", "assets/backgroundsign.webp");
         this.load.image("PasswordIcon", "assets/icons/passwordblack.png");
         this.load.image("Username", "assets/icons/userblack.png");
         this.load.image("password", "assets/password.png");
         this.load.image("SignIn", "assets/SignIn.png");
-        this.load.image("ExitButton", "assets/ExitButton.png");
+        this.load.image("ExitButton", "assets/icons/exit_b.png");
     }
 
     async handleSignIn() {
@@ -61,7 +61,7 @@ export class SignIn extends Scene {
         const exitButton = this.add
             .image(1460, 765, "ExitButton")
             .setInteractive({ useHandCursor: true });
-        exitButton.setScale(0.7);
+        exitButton.setScale(0.4);
         exitButton.on("pointerdown", () => {
             this.scene.start("Login");
         });
