@@ -1,4 +1,6 @@
 import {MainMenu} from "./scenes/MainMenu.js";
+import {Login} from "./scenes/Login.js"
+import {SignIn} from "./scenes/SignIn.js";
 
 
 const speedDown=300;
@@ -17,7 +19,8 @@ const config={
     scene: [
 
         MainMenu,
-        Login
+        Login,
+        SignIn
 
     ],
 

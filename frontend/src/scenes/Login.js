@@ -1,33 +1,30 @@
-import {Scene} from "phaser";
+import { Scene } from "phaser";
 
-export class login extends Scene {
+export class Login extends Scene {
     constructor() {
         super("Login");
-        this.baseUrl = "http://localhost:3000"
+        this.baseUrl = "http://localhost:3000";
     }
 
-    preload(){
-        this.load.image("Login","assets/LoginButton.png")
+    preload() {
+        this.load.image("Login", "assets/icons/LoginButton.png");
+        this.load.image("password", "assets/password.png");
+        this.load.image("SignIn", "assets/icons/signup.png");
+        this.load.image("PasswordIcon", "assets/PasswordIcon.png");
+        this.load.image("UsernameIcon", "assets/UsernameIcon.png");
+        this.load.image("Username", "assets/Username.png");
         this.load.image("GameTitle", "assets/bananalogo2.png");
-        this.load.image("PasswordIcon","assets/icons/passwordblack.png")
-        this.load.image("SignIn","assets/icons/signup.png");
-        this.load.image("UsernameIcon","assets/icons/userblack.png");
-        this.load.image("Username","assets/Username.png");
-        this.load.image("LoginBack","assets/tropical_island.webp");
-        this.load.image("password","assets/password.png")
-
+        this.load.image("LoginBack", "assets/LoginBack.png");
     }
 
-    create(){
-        const login= this.add.image(0,0, "LoginBack");
-        login.setOrigin(0);
-        login.setDisplaySize(this.scale.width,this.scale.height);
+    create() {
+        const loginBg = this.add.image(0, 0, "LoginBack");
+        loginBg.setOrigin(0);
+        loginBg.setDisplaySize(this.scale.width, this.scale.height);
 
-        this.add.image(960,250,"GameTitle").setScale(0.7);
+        this.add.image(960, 250, "GameTitle").setScale(0.7);
 
-        this.add.image(960,250,"UsernameIcon").setScale(0.7);
-
-
+        this.add.image(675, 465, "UsernameIcon").setScale(0.8);
         this.usernameInput = this.add.dom(960, 465).createFromHTML(
             `<input type="text" name="username" placeholder="Username" 
          style="
@@ -56,15 +53,20 @@ export class login extends Scene {
 
         const loginButton = this.add
             .image(1085, 720, "Login")
-            .setScale(0.7)
+            .setScale(0.8)
             .setInteractive({ useHandCursor: true })
-            .on("pointerdown", () => this.handleLogin());
+            .on("pointerdown", () => this.handleLogin())
+            .on("pointerover", () => loginButton.setScale(0.9))  // Enlarge when hovered
+            .on("pointerout", () => loginButton.setScale(0.8)); // Reset when not hovered
 
         const signInButton = this.add
             .image(700, 720, "SignIn")
-            .setScale(0.7)
+            .setScale(0.8)
             .setInteractive({ useHandCursor: true })
-            .on("pointerdown", () => this.handleSignIn());
+            .on("pointerdown", () => this.handleSignIn())
+            .on("pointerover", () => signInButton.setScale(0.9))  // Enlarge when hovered
+            .on("pointerout", () => signInButton.setScale(0.8)); // Reset when not hovered
+
 
         this.feedbackText = this.add
             .text(785, 720, "", { fontSize: "20px", color: "#FF0000" })
@@ -78,10 +80,4 @@ export class login extends Scene {
     handleSignIn() {
         this.scene.start("SignIn");
     }
-
-
-
 }
-
-
-
