@@ -9,8 +9,8 @@ export class SignIn extends Scene {
     preload() {
         this.load.image("SignUpTitle", "assets/SignUpTitle.png");
         this.load.image("SignUpBG", "assets/backgroundsign.webp");
-        this.load.image("PasswordIcon", "assets/icons/passwordblack.png");
-        this.load.image("Username", "assets/icons/userblack.png");
+        this.load.image("PasswordIcon", "assets/PasswordIcon.png");
+        this.load.image("Username", "assets/userblack.png");
         this.load.image("password", "assets/password.png");
         this.load.image("SignIn", "assets/SignIn.png");
         this.load.image("ExitButton", "assets/icons/exit_b.png");

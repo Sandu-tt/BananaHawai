@@ -2,7 +2,7 @@ import {MainMenu} from "./scenes/MainMenu.js";
 import {Login} from "./scenes/Login.js"
 import {SignIn} from "./scenes/SignIn.js";
 import {InGameUI} from "./scenes/GameView.js";
-
+import {Leaderboard} from "./scenes/LeaderBoard.js";
 
 const speedDown=300;
 const config={
@@ -22,7 +22,8 @@ const config={
         MainMenu,
         Login,
         SignIn,
-        InGameUI
+        InGameUI,
+        Leaderboard
 
 
     ],
